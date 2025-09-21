@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Instagram Profil - Bootstrap</title>
+  <title>Instagram Profile - Bootstrap</title>
   <!-- Bootstrap 5 CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    .profil-img {
+    .profile-img {
       width: 120px;
       height: 120px;
       object-fit: cover;
@@ -16,28 +16,45 @@
       width: 100%;
       height: 250px;
       object-fit: cover;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .feed-img:hover {
+      opacity: 0.8;
+      transform: scale(1.02);
     }
   </style>
 </head>
 <body>
   <div class="container py-4">
 
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-white border-bottom mb-4">
+      <div class="container-fluid justify-content-center">
+        <span class="navbar-brand mb-0 h1">Instagram</span>
+      </div>
+    </nav>
+
     <!-- Header -->
     <header class="d-flex align-items-center mb-4">
-      <img src="assets/img/profil.jpg" alt="profil" class="rounded-circle profil-img mb-4">
+      <img src="assets/img/profil.jpg" alt="profile" class="rounded-circle profile-img me-4">
       <div>
         <h2 class="h4 mb-1">@puspitaikasari</h2>
+        <div class="d-flex gap-3 text-muted mb-2">
+          <span><strong>12</strong> posts</span>
+          <span><strong>290</strong> followers</span>
+          <span><strong>300</strong> following</span>
+        </div>
         <div class="d-flex gap-2 flex-wrap">
           <button class="btn btn-primary btn-sm">Follow</button>
-          <button class="btn btn-outline-secondary btn-sm">Edit Profil</button>
+          <button class="btn btn-outline-secondary btn-sm">Edit Profile</button>
         </div>
       </div>
     </header>
 
-
     <!-- Bio -->
     <section class="mb-4">
-      <p class="mb-0 text-muted">hidden side</p>
+      <p class="mb-0 text-muted">hidden side ✨</p>
     </section>
 
     <!-- Feed -->
@@ -47,37 +64,37 @@
         <img src="assets/img/foto 1.jpg" alt="feed1" class="feed-img rounded">
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <img src="https://source.unsplash.com/random/300x300?sig=2" alt="feed2" class="feed-img rounded">
+        <img src="assets/img/foto 2.jpg" alt="feed2" class="feed-img rounded">
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <img src="https://source.unsplash.com/random/300x300?sig=3" alt="feed3" class="feed-img rounded">
+        <img src="assets/img/foto 3.jpg" alt="feed3" class="feed-img rounded">
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <img src="https://source.unsplash.com/random/300x300?sig=4" alt="feed4" class="feed-img rounded">
+        <img src="assets/img/foto 4.jpg" alt="feed4" class="feed-img rounded">
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <img src="https://source.unsplash.com/random/300x300?sig=5" alt="feed5" class="feed-img rounded">
+        <img src="assets/img/foto 5.jpg" alt="feed5" class="feed-img rounded">
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <img src="https://source.unsplash.com/random/300x300?sig=6" alt="feed6" class="feed-img rounded">
+        <img src="assets/img/foto 6.jpg" alt="feed6" class="feed-img rounded">
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <img src="https://source.unsplash.com/random/300x300?sig=7" alt="feed7" class="feed-img rounded">
+        <img src="assets/img/foto 7.jpg" alt="feed7" class="feed-img rounded">
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <img src="https://source.unsplash.com/random/300x300?sig=8" alt="feed8" class="feed-img rounded">
+        <img src="assets/img/foto 8.jpg" alt="feed8" class="feed-img rounded">
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <img src="https://source.unsplash.com/random/300x300?sig=9" alt="feed9" class="feed-img rounded">
+        <img src="assets/img/foto 9.jpg" alt="feed9" class="feed-img rounded">
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <img src="https://source.unsplash.com/random/300x300?sig=10" alt="feed10" class="feed-img rounded">
+        <img src="assets/img/foto 10.jpg" alt="feed10" class="feed-img rounded">
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <img src="https://source.unsplash.com/random/300x300?sig=11" alt="feed11" class="feed-img rounded">
+        <img src="assets/img/foto 11.jpg" alt="feed11" class="feed-img rounded">
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <img src="https://source.unsplash.com/random/300x300?sig=12" alt="feed12" class="feed-img rounded">
+        <img src="assets/img/foto 12.jpg" alt="feed12" class="feed-img rounded">
       </div>
     </section>
 
@@ -88,7 +105,7 @@
 
   </div>
 
-  <!-- Bootstrap JS (opsional) -->
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
