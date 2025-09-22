@@ -1,18 +1,27 @@
-1. Mengapa memilih konfigurasi col-* tertentu untuk tiap breakpoint?
-   
-  Mobile (≤576px, 1 kolom): layar kecil → konten harus mudah dibaca, feed ditampilkan satu-satu agar tidak terlalu padat.
-Tablet (≥768px, 2–3 kolom): layar sedang → memungkinkan menampilkan lebih banyak foto per baris, tapi tetap menjaga ukuran gambar tidak terlalu kecil.
-Desktop (≥992px, 4 kolom): layar lebar → foto bisa ditampilkan grid 4 kolom (atau 5–6 kalau rapi) sehingga menyerupai layout Instagram asli.
-Konfigurasi ini dipilih agar UX tetap konsisten, konten tetap terbaca jelas, dan layout responsif di berbagai device.
+1. Jelaskan keputusan grid-cols/gap di tiap breakpoint — kenapa begitu?
 
-3. Bagaimana memastikan tombol Follow/Edit Profile tetap mudah dijangkau di mobile?
-Tombol menggunakan Bootstrap button utilities (btn, btn-primary, w-100 atau d-block).
-Pada mobile, tombol diberi lebar penuh (full-width) agar mudah ditekan dengan jari.
-Menggunakan Bootstrap responsive utilities (d-sm-inline, d-block, dsb) untuk mengatur posisi tombol agar bergeser sesuai breakpoint.
-Pendekatan ini memastikan tombol selalu visible, besar, dan mudah diakses di layar kecil.
+ Mobile (default, grid-cols-1): layar kecil → feed ditampilkan 1 kolom agar gambar besar, mudah dilihat, dan tidak terlalu   padat.
+ Tablet (md:grid-cols-2 / md:grid-cols-3): layar sedang → lebih banyak ruang, feed bisa dibagi 2–3 kolom supaya mirip        Instagram asli tapi tetap readable.
+ Desktop (lg:grid-cols-4+): layar lebar → memanfaatkan penuh ruang dengan grid 4 kolom atau lebih sehingga user bisa         melihat banyak foto sekaligus.
+ Gap (gap-2/gap-4): menjaga jarak antar foto agar tidak menempel, tapi tetap hemat ruang.
+ Konfigurasi ini mengikuti prinsip mobile-first + responsive design.
 
-4. Jika postingan bertambah jadi 50, apa potensi masalah dan bagaimana solusi gridmu mengatasinya?
-Potensi masalah:
-Loading halaman lebih berat (butuh load lebih banyak gambar).
-Grid bisa jadi terlalu panjang dan butuh scroll berlebihan.
-Layout bisa berantakan kalau ukuran gambar tidak konsisten.
+2. Bagaimana kamu memanfaatkan utility responsive Tailwind untuk memecahkan masalah layout yang muncul di mobile?
+
+  Gunakan responsive prefix (sm:, md:, lg:) untuk menyesuaikan grid/flex sesuai device.
+  Tombol aksi (Follow/Edit Profile) dibuat full width di mobile (w-full block text-center) agar mudah ditekan, lalu kembali   ke ukuran normal (md:w-auto inline-block) di layar lebih besar.
+  Atur ulang urutan elemen dengan order-* dan md:order-* supaya elemen penting muncul duluan di mobile.
+  Gunakan ukuran teks yang berbeda (text-sm md:text-base lg:text-lg) agar tetap proporsional di semua layar.
+  Pendekatan ini bikin UI mudah dipakai di mobile tanpa mengorbankan pengalaman di desktop.
+
+3. Jelaskan trade-off antara memakai banyak utility classes vs membuat component CSS tersendiri.
+
+ Utility classes (Tailwind murni):
+- Cepat dipakai, langsung responsif tanpa nulis CSS tambahan.
+- Konsisten dengan design system Tailwind.
+- HTML bisa jadi panjang & sulit dibaca.
+
+Component CSS tersendiri (misalnya via @apply / custom class):
+- HTML lebih bersih & ringkas, mudah dipelihara.
+- Bisa dipakai ulang di banyak tempat.
+- Butuh tambahan definisi CSS, sedikit melawan prinsip utility-first Tailwind.
